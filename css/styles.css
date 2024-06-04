@@ -1,0 +1,543 @@
+:root {
+  --color-primario: #007bff; /* Azul brillante */
+  --color-secundario: #f8f9fa; /* Blanco */
+  --color-destacado: #ff9933; /* Naranja brillante */
+  --color-bg-boton: #0095ff;
+  --espaciado: 2rem;
+  --tamano-botones: 0.5rem 1rem;
+  --tamano-imagen-proyecto: 300px;
+  --transicion-botones: background-color 1s ease-in-out;
+  --transicion-grid: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #007bff, #003366);
+  color: var(--color-secundario);
+}
+
+header {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  padding: var(--espaciado);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--espaciado);
+}
+
+header nav ul li {
+  margin: 0;
+}
+
+header nav ul li a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color-destacado);
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+section {
+  padding: var(--espaciado);
+}
+
+/* Presentacion */
+
+#presentacion {
+  background-image: radial-gradient(circle at center, #231c70, #372f92);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #000; /* Cambiado a texto blanco para contrastar con los colores oscuros del degradado */
+  padding: 100px 0; /* Ajusta el espaciado según sea necesario */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar el contenedor */
+}
+
+.presentacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.presentacion-container {
+  display: flex;
+  align-items: center;
+}
+
+.presentacion-content {
+  padding: 0 20px; /* Ajusta el espaciado horizontal del contenido */
+  color: #fff; /* Color de texto blanco para mayor contraste con la imagen */
+}
+
+.presentacion-titulo {
+  font-size: 48px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar el contenedor */
+}
+
+.presentacion-texto {
+  font-size: 20px; /* Aumento en el tamaño de la letra */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar el texto */
+}
+
+.presentacion-btn {
+  display: inline-block;
+  padding: 12px 24px; /* Aumento en el tamaño del botón */
+  background-color: var(--color-bg-boton);
+  color: #fff; /* Color de texto del botón */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: var(--transicion-botones);
+}
+
+.btn-cv {
+  background-color: var(--color-destacado);
+  font-size: 1.05rem;
+}
+
+.presentacion-btn:hover {
+  background-color: #e68319; /* Color de fondo del botón al pasar el mouse */
+}
+
+/* Estilo modo oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #f8f9fa;
+}
+
+body.dark-mode .sobre-mi {
+  background-color: #2d2d2d;
+}
+
+body.dark-mode .sobre-mi-titulo {
+  color: #fff;
+}
+
+body.dark-mode .sobre-mi-texto {
+  color: #f8f9fa;
+}
+
+/* Sobre MI */
+.sobre-mi {
+  background-color: #f2f2f2; /* Color de fondo resaltado */
+  padding: 50px 0;
+}
+
+.sobre-mi-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sobre-mi-content {
+  text-align: center;
+}
+
+.sobre-mi-titulo {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333; /* Color del título */
+}
+
+.sobre-mi-texto {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #666; /* Color del texto */
+}
+
+.sobre-mi-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--color-bg-boton); /* Color del botón */
+  color: #fff; /* Color del texto del botón */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: var(--transicion-botones);
+}
+
+.sobre-mi-btn:hover {
+  background-color: var(--color-destacado); /* Color del botón al pasar el mouse */
+}
+
+/* Proyectos */
+#proyectos {
+  padding: var(--espaciado);
+}
+
+.proyectos-header {
+  text-align: center;
+  margin-bottom: var(--espaciado);
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--tamano-imagen-proyecto), 1fr)
+  );
+  justify-items: center;
+  gap: var(--espaciado);
+  /* justify-content: center; */
+  grid-template-rows: auto 1fr;
+}
+
+
+/* Estilo para Modo Oscuro */
+body.dark-mode .proyecto {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.proyecto {
+  border: 1px solid #ddd;
+  max-width: 400px;
+  padding: var(--espaciado);
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  transition: var(--transicion-botones)
+}
+
+.proyecto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto img {
+  max-width: 100%;
+  height: 250px;
+  display: block;
+  margin-bottom: var(--espaciado);
+}
+
+.proyecto p {
+  height: 200px;
+  max-height: 200px;
+  text-align: justify;
+}
+
+.proyecto .btn {
+  display: inline-block;
+  background-color: var(--color-bg-boton);
+  color: var(--color-secundario);
+  text-decoration: none;
+  transition: var(--transicion-botones);
+}
+
+.proyecto .btn:hover {
+  background-color: var(--color-destacado);
+}
+
+body.dark-mode .habilidad {
+  background-color: #2d2d2d;
+  color: var(--color-secundario);
+}
+
+/* Habilidades */
+#habilidades {
+  padding: 2rem;
+}
+
+.habilidades-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.habilidad {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--color-secundario);
+  color: #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.habilidad:hover {
+  transform: translateY(-5px);
+  text-decoration: underline;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.habilidad i {
+  font-size: 2rem;
+  color: var(--color-primario); /* Color principal de los iconos */
+}
+
+.habilidad h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Cambiar el color de los iconos */
+.habilidad i.fab.fa-html5 {
+  color: #e34f26; /* Color de HTML */
+}
+
+.habilidad i.fab.fa-css3-alt {
+  color: #1572b6; /* Color de CSS */
+}
+
+.habilidad i.fab.fa-js {
+  color: #f7df1e; /* Color de JavaScript */
+}
+
+.habilidad i.fab.fa-react {
+  color: #61dafb; /* Color de React */
+}
+
+body.dark-mode #contacto {
+  background-color: #2d2d2d;
+}
+
+body.dark-mode .contacto-container h2{
+  color: var(--color-secundario);
+}
+
+body.dark-mode .contacto-container .campo > label{
+  color: var(--color-secundario);
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+  background-color: #f9f9f9; /* Color de fondo */
+  padding: 50px 0; /* Espaciado interno */
+}
+
+.contacto-container {
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+.contacto-container h2 {
+  font-size: 36px; /* Tamaño del título */
+  margin-bottom: 20px; /* Espaciado inferior */
+  color: #333; /* Color del texto */
+}
+
+/* Estilos para los campos del formulario */
+.campo {
+  margin-bottom: 30px; /* Espaciado inferior entre campos */
+}
+
+label {
+  display: block; /* Mostrar etiquetas en línea */
+  margin-bottom: 10px; /* Espaciado inferior */
+  font-size: 18px; /* Tamaño de la fuente */
+  color: #555; /* Color del texto */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: calc(100% - 20px); /* Ancho del campo con margen */
+  padding: 15px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde */
+  border-radius: 5px; /* Borde redondeado */
+  font-size: 16px; /* Tamaño de la fuente */
+  color: #333; /* Color del texto */
+}
+
+textarea {
+  height: 150px; /* Altura del campo de texto */
+}
+
+/* Estilos para el botón de enviar */
+.btn {
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 15px 30px; /* Espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  font-size: 18px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambio de cursor al pasar el ratón */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+}
+
+/* Sociales*/
+
+#sociales {
+  position: fixed;
+  top: 50%; /* Ajusta la posición vertical según sea necesario */
+  right: 0;
+  transform: translateY(-50%); /* Centra verticalmente el elemento */
+  padding: 0.5rem;
+  background-color: #f4f4f4; /* Agregamos un color de fondo para mayor contraste */
+  border-radius: 12px; /* Añadimos bordes redondeados para estilizar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añadimos sombra para resaltar el contacto */
+  transition: padding 0.3s ease, right 0.3s ease;
+}
+
+/* #sociales{
+    text-align: center;
+    margin-bottom: 1rem;
+} */
+
+#sociales ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#sociales ul li {
+  margin-bottom: 0.5rem;
+}
+
+#sociales ul li a {
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#sociales ul li a:hover {
+  color: var(--color-destacado);
+}
+
+#sociales ul li i {
+  margin: 0 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  text-align: center;
+  padding: var(--espaciado);
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  margin: var(--espaciado) 0;
+}
+ul li i {
+  margin-right: var(--espaciado);
+}
+
+/* Media queries para dispositivos de hasta 768px de ancho */
+@media only screen and (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .presentacion-texto h1 {
+    font-size: 36px;
+  }
+
+  .presentacion-texto p {
+    font-size: 16px;
+  }
+
+  #sociales {
+    right: 1rem;
+  }
+
+  #sociales ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Media queries para dispositivos de hasta 576px de ancho */
+@media only screen and (max-width: 576px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .presentacion-texto h1 {
+    font-size: 28px;
+  }
+
+  .presentacion-texto p {
+    font-size: 14px;
+  }
+
+  #sociales {
+    padding: 0.2rem;
+  }
+
+  #sociales ul li a {
+    font-size: 1rem;
+  }
+
+  #sociales ul li i {
+    margin: 0 0.25rem;
+  }
+}
+
+/* Media queries para dispositivos de hasta 420px de ancho */
+@media only screen and (max-width: 420px) {
+  .presentacion-texto h1 {
+    font-size: 24px;
+  }
+
+  .presentacion-texto p {
+    font-size: 12px;
+  }
+
+  #sociales {
+    padding: 0.5rem;
+  }
+
+  #sociales ul li a {
+    font-size: 1.2rem;
+  }
+
+  #sociales ul li i {
+    margin: 0 0.2rem;
+  }
+}
